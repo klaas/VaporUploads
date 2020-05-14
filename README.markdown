@@ -1,3 +1,12 @@
+This is a modified fork to demonstrate the following error as a reply to this question <https://forums.swift.org/t/how-to-use-nonblockingfileio-for-repeated-writes/36206/18>:
+
+    Precondition failed: blacklisted errno 9 Bad file descriptor in write(descriptor:pointer:size:)): file /Users/coder/prog/forks/VaporUploads/.build/checkouts/swift-nio/Sources/NIO/System.swift, line 112
+    
+
+To reproduce just clone this repository, start the Vapor server with `swift Run` and issue a file upload similar to this twice:
+
+    curl --verbose --data-binary @/Users/coder/Desktop/SampleImage.jpg http://localhost:8080/stream
+
 # VaporUploads
 
 ## Demonstrating File Uploads in Vapor 4
